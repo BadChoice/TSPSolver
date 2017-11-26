@@ -84,7 +84,7 @@
     TSPAddress* generalPrim     = [TSPAddress make:@"generalPrim" latitude:41.731506 longitude:1.817945];
 
     [self measureBlock:^{
-        TSPRoute* route = [TSPSolver solve:locations startingAt:generalPrim with:[TSPExactAlgorithm new]];
+        TSPRoute* route = [TSPSolver solve:locations startingAt:generalPrim with:[TSPNearestAlgorithm new]];
     }];
 }
 
