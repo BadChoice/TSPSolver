@@ -20,7 +20,6 @@
     return self;
 }
 
-
 -(double)distance{
     if ( mDistance < 0 ) {
         id <TSPPointContract> firstLocation = self.locations.firstObject;
@@ -39,4 +38,8 @@
     return mDistance;
 }
 
+-(void)dealloc{
+    self.locations = nil;
+    self.start = nil;
+}
 @end

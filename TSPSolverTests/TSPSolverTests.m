@@ -48,17 +48,18 @@
     return @[revo, ataneu, baixador, stk, joviat, globus, milcentenari, museuTecnica];
 }
 
-- (void)test_can_find_best_route {
+- (void)test_exact_algorithm {
     NSArray* locations          = [self sampleData];
     TSPAddress* generalPrim     = [TSPAddress make:@"generalPrim     " latitude:41.731506 longitude:1.817945];
 
     TSPRoute* route = [TSPSolver solve:locations startingAt:generalPrim with:[TSPExactAlgorithm new]];
     [self printRoute:route];
+}
 
-    TSPRoute* route2 = [TSPSolver solve:locations startingAt:generalPrim with:[TSPNearestAlgorithm new]];
-    [self printRoute:route2];
-
-    TSPRoute* route3 = [TSPSolver solve:locations startingAt:generalPrim with:[TSPGeneticAlgorithm new]];
+- (void)test_nearest_algorithm{
+    NSArray* locations          = [self sampleData];
+    TSPAddress* generalPrim     = [TSPAddress make:@"generalPrim     " latitude:41.731506 longitude:1.817945];
+    TSPRoute* route3 = [TSPSolver solve:locations startingAt:generalPrim with:[TSPNearestAlgorithm new]];
     [self printRoute:route3];
 }
 

@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		775101D2CC3325785B0CA643 /* TSPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 775103C82321198EB41361E2 /* TSPAddress.m */; };
+		775102A07C7DADAAA4022B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77510FE1915ADE044D0C310E /* Main.storyboard */; };
+		775103952AC8AE59D796DD95 /* TSPGeneticAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510785922C88302E9224AC /* TSPGeneticAlgorithm.m */; };
+		775104E0F9167FB80FFBFA96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751080D6B8E49CC31F9B0AE /* AppDelegate.m */; };
+		775105104776F335F08A3C92 /* TSPRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510D26CBD7FCA4529546A8 /* TSPRoute.m */; };
+		7751066EF8249DC0D44F8745 /* TSPSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751064DF1F81D5CCC66D3FD /* TSPSolver.m */; };
+		775106F2909DA2E73782D6AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775102C48D7FBC8208A5F849 /* ViewController.m */; };
+		775108DAA14B47D73E9F3B25 /* TSPNearestAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510BEFA6E9DA4A9C4983F4 /* TSPNearestAlgorithm.m */; };
+		775108E018042916921440FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751057E7B0436993FBABE5D /* main.m */; };
+		775109C1F1C791AEEDF9E146 /* GAPopulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510BF1D6A998A683809E58 /* GAPopulation.m */; };
+		775109E2749C147C879E4A43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7751042726F92539BA4111BB /* LaunchScreen.storyboard */; };
+		77510B2592B90DA8C4B76305 /* TSPSolverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510679CDBB161206A96ABF /* TSPSolverTests.m */; };
+		77510EB78379792F74AF5E3D /* TSPExactAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 775103A7C3812D1938223C3E /* TSPExactAlgorithm.m */; };
+		77510FBC3F5504CEC1829B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7751054C454D5B6579780EA0 /* Assets.xcassets */; };
+		8CE9F1D51523B4F4CD5E1418 /* libPods-TSPSolverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F91C469CDB2A60FACFA881 /* libPods-TSPSolverTests.a */; };
+		D3B679B52ACB20442F1D7AD1 /* libPods-TSPSolver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC8AF1B0EECEF7201DDA083 /* libPods-TSPSolver.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		775101CEEC0CC036DA066DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 775103CC6F7399D73798A88F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 775106AE866BF2C3D7CB00BE;
+			remoteInfo = TSPSolver;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05CE572D56F907FB4047D4FF /* Pods-TSPSolverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolverTests/Pods-TSPSolverTests.release.xcconfig"; sourceTree = "<group>"; };
+		41F91C469CDB2A60FACFA881 /* libPods-TSPSolverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TSPSolverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77510053E3349E1061A1A66A /* TSPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPAddress.h; sourceTree = "<group>"; };
+		775100E70B106671B580DCA2 /* TSPNearestAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPNearestAlgorithm.h; sourceTree = "<group>"; };
+		775100F2DC9647F62CCB1BF5 /* TSPSolverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSPSolverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7751017D7F159FB48C69AF0F /* GAPopulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPopulation.h; sourceTree = "<group>"; };
+		775102C48D7FBC8208A5F849 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7751035B0F9743F7D09C7D49 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		775103A0D954AB42980F1521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		775103A7C3812D1938223C3E /* TSPExactAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPExactAlgorithm.m; sourceTree = "<group>"; };
+		775103C82321198EB41361E2 /* TSPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPAddress.m; sourceTree = "<group>"; };
+		7751041A1DF4D76F4E91C4C7 /* TSPPointContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPPointContract.h; sourceTree = "<group>"; };
+		7751054C454D5B6579780EA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7751057E7B0436993FBABE5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		775105BA345B76AAF2CA270A /* TSPExactAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPExactAlgorithm.h; sourceTree = "<group>"; };
+		7751064DF1F81D5CCC66D3FD /* TSPSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPSolver.m; sourceTree = "<group>"; };
+		77510679CDBB161206A96ABF /* TSPSolverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSPSolverTests.m; sourceTree = "<group>"; };
+		77510785922C88302E9224AC /* TSPGeneticAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPGeneticAlgorithm.m; sourceTree = "<group>"; };
+		775107BD6AFCAAA3A925D7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		7751080D6B8E49CC31F9B0AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		775108DA2DB7902D31EE817D /* TSPRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPRoute.h; sourceTree = "<group>"; };
+		775109154D394448286760BB /* TSPSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSPSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		775109A13CC398F2204A9F5F /* TSPSolverContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPSolverContract.h; sourceTree = "<group>"; };
+		77510A994D33752A4CA92EE9 /* TSPGeneticAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPGeneticAlgorithm.h; sourceTree = "<group>"; };
+		77510B4E9D51831A9F04FE6D /* TSPSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPSolver.h; sourceTree = "<group>"; };
+		77510BEFA6E9DA4A9C4983F4 /* TSPNearestAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPNearestAlgorithm.m; sourceTree = "<group>"; };
+		77510BF1D6A998A683809E58 /* GAPopulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPopulation.m; sourceTree = "<group>"; };
+		77510BFB4A5A948C22BCEF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77510D1B66923059C047E0DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77510D26CBD7FCA4529546A8 /* TSPRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPRoute.m; sourceTree = "<group>"; };
+		77510DB84C65873A46CEB806 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		807FA2CF1502F78D8CFE7501 /* Pods-TSPSolver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolver/Pods-TSPSolver.debug.xcconfig"; sourceTree = "<group>"; };
+		B091B4B036732A1C25138B33 /* Pods-TSPSolverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolverTests/Pods-TSPSolverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B8F94CE8669333A098082DEB /* Pods-TSPSolver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolver.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolver/Pods-TSPSolver.release.xcconfig"; sourceTree = "<group>"; };
+		BBC8AF1B0EECEF7201DDA083 /* libPods-TSPSolver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TSPSolver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77510786D9A674BB62621D34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE9F1D51523B4F4CD5E1418 /* libPods-TSPSolverTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77510F24DB072DB6336FCF26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3B679B52ACB20442F1D7AD1 /* libPods-TSPSolver.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		775102091162CABB18E9E8CF /* TSPSolverTests */ = {
+			isa = PBXGroup;
+			children = (
+				775107BD6AFCAAA3A925D7A1 /* Info.plist */,
+				77510679CDBB161206A96ABF /* TSPSolverTests.m */,
+			);
+			path = TSPSolverTests;
+			sourceTree = "<group>";
+		};
+		775103E61A65FADB6E898DF0 /* TSPSolver */ = {
+			isa = PBXGroup;
+			children = (
+				775103A0D954AB42980F1521 /* Info.plist */,
+				7751054C454D5B6579780EA0 /* Assets.xcassets */,
+				7751042726F92539BA4111BB /* LaunchScreen.storyboard */,
+				7751057E7B0436993FBABE5D /* main.m */,
+				77510DB84C65873A46CEB806 /* AppDelegate.h */,
+				7751080D6B8E49CC31F9B0AE /* AppDelegate.m */,
+				77510FE1915ADE044D0C310E /* Main.storyboard */,
+				7751035B0F9743F7D09C7D49 /* ViewController.h */,
+				775102C48D7FBC8208A5F849 /* ViewController.m */,
+				7751085190FE0C335363079D /* lib */,
+				77510053E3349E1061A1A66A /* TSPAddress.h */,
+				775103C82321198EB41361E2 /* TSPAddress.m */,
+			);
+			path = TSPSolver;
+			sourceTree = "<group>";
+		};
+		77510805240B84E64597CE19 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				775103A7C3812D1938223C3E /* TSPExactAlgorithm.m */,
+				775105BA345B76AAF2CA270A /* TSPExactAlgorithm.h */,
+				77510BEFA6E9DA4A9C4983F4 /* TSPNearestAlgorithm.m */,
+				775100E70B106671B580DCA2 /* TSPNearestAlgorithm.h */,
+				775109A13CC398F2204A9F5F /* TSPSolverContract.h */,
+				77510B000BFE6D2F44332151 /* Genetic */,
+			);
+			path = Algorithms;
+			sourceTree = "<group>";
+		};
+		7751085190FE0C335363079D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				775108DA2DB7902D31EE817D /* TSPRoute.h */,
+				77510D26CBD7FCA4529546A8 /* TSPRoute.m */,
+				77510B4E9D51831A9F04FE6D /* TSPSolver.h */,
+				7751064DF1F81D5CCC66D3FD /* TSPSolver.m */,
+				7751041A1DF4D76F4E91C4C7 /* TSPPointContract.h */,
+				77510805240B84E64597CE19 /* Algorithms */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		77510B000BFE6D2F44332151 /* Genetic */ = {
+			isa = PBXGroup;
+			children = (
+				77510A994D33752A4CA92EE9 /* TSPGeneticAlgorithm.h */,
+				77510785922C88302E9224AC /* TSPGeneticAlgorithm.m */,
+				77510BF1D6A998A683809E58 /* GAPopulation.m */,
+				7751017D7F159FB48C69AF0F /* GAPopulation.h */,
+			);
+			path = Genetic;
+			sourceTree = "<group>";
+		};
+		77510DD5DBF767C8086E962A = {
+			isa = PBXGroup;
+			children = (
+				77510F7B30530D4C06C8DB56 /* Products */,
+				775103E61A65FADB6E898DF0 /* TSPSolver */,
+				775102091162CABB18E9E8CF /* TSPSolverTests */,
+				DAF25AAC71CBE6D34C36491A /* Pods */,
+				841B10EDD491A0A90F7256E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		77510F7B30530D4C06C8DB56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				775109154D394448286760BB /* TSPSolver.app */,
+				775100F2DC9647F62CCB1BF5 /* TSPSolverTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		841B10EDD491A0A90F7256E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBC8AF1B0EECEF7201DDA083 /* libPods-TSPSolver.a */,
+				41F91C469CDB2A60FACFA881 /* libPods-TSPSolverTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAF25AAC71CBE6D34C36491A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				807FA2CF1502F78D8CFE7501 /* Pods-TSPSolver.debug.xcconfig */,
+				B8F94CE8669333A098082DEB /* Pods-TSPSolver.release.xcconfig */,
+				B091B4B036732A1C25138B33 /* Pods-TSPSolverTests.debug.xcconfig */,
+				05CE572D56F907FB4047D4FF /* Pods-TSPSolverTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		775106AE866BF2C3D7CB00BE /* TSPSolver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 775108FC51FE92A9B5181B5F /* Build configuration list for PBXNativeTarget "TSPSolver" */;
+			buildPhases = (
+				B6420FF0D6766D62110A9A67 /* [CP] Check Pods Manifest.lock */,
+				7751094ABDDD50E57E90DA28 /* Sources */,
+				77510F24DB072DB6336FCF26 /* Frameworks */,
+				77510810CC75E4D579070833 /* Resources */,
+				2A75EF4DDED55AA1B7BA56E4 /* [CP] Embed Pods Frameworks */,
+				708F0CC9F09DD28AA5C4EE82 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TSPSolver;
+			productName = TSPSolver;
+			productReference = 775109154D394448286760BB /* TSPSolver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7751076D1B54CEAAD0086330 /* TSPSolverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77510F8B3DBF6659EC41D4CC /* Build configuration list for PBXNativeTarget "TSPSolverTests" */;
+			buildPhases = (
+				7FD8EE60D92C2D5B6033FA2A /* [CP] Check Pods Manifest.lock */,
+				7751044EE82216C0F352490E /* Sources */,
+				77510786D9A674BB62621D34 /* Frameworks */,
+				775103344947E5B3607A37E6 /* Resources */,
+				65FD4856E394BC602F137F8D /* [CP] Embed Pods Frameworks */,
+				95F34C88730AE2A4C4806262 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				775107729971E7BAA615322D /* PBXTargetDependency */,
+			);
+			name = TSPSolverTests;
+			productName = TSPSolverTests;
+			productReference = 775100F2DC9647F62CCB1BF5 /* TSPSolverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		775103CC6F7399D73798A88F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Revo Systems";
+			};
+			buildConfigurationList = 7751058705DEA2AA6A33E070 /* Build configuration list for PBXProject "TSPSolver" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 77510DD5DBF767C8086E962A;
+			productRefGroup = 77510F7B30530D4C06C8DB56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				775106AE866BF2C3D7CB00BE /* TSPSolver */,
+				7751076D1B54CEAAD0086330 /* TSPSolverTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		775103344947E5B3607A37E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77510810CC75E4D579070833 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77510FBC3F5504CEC1829B9E /* Assets.xcassets in Resources */,
+				775109E2749C147C879E4A43 /* LaunchScreen.storyboard in Resources */,
+				775102A07C7DADAAA4022B10 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A75EF4DDED55AA1B7BA56E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TSPSolver/Pods-TSPSolver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65FD4856E394BC602F137F8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TSPSolverTests/Pods-TSPSolverTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		708F0CC9F09DD28AA5C4EE82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TSPSolver/Pods-TSPSolver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FD8EE60D92C2D5B6033FA2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TSPSolverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95F34C88730AE2A4C4806262 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TSPSolverTests/Pods-TSPSolverTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6420FF0D6766D62110A9A67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TSPSolver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7751044EE82216C0F352490E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77510B2592B90DA8C4B76305 /* TSPSolverTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7751094ABDDD50E57E90DA28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				775108E018042916921440FE /* main.m in Sources */,
+				775104E0F9167FB80FFBFA96 /* AppDelegate.m in Sources */,
+				775106F2909DA2E73782D6AE /* ViewController.m in Sources */,
+				775105104776F335F08A3C92 /* TSPRoute.m in Sources */,
+				7751066EF8249DC0D44F8745 /* TSPSolver.m in Sources */,
+				775101D2CC3325785B0CA643 /* TSPAddress.m in Sources */,
+				77510EB78379792F74AF5E3D /* TSPExactAlgorithm.m in Sources */,
+				775108DAA14B47D73E9F3B25 /* TSPNearestAlgorithm.m in Sources */,
+				775103952AC8AE59D796DD95 /* TSPGeneticAlgorithm.m in Sources */,
+				775109C1F1C791AEEDF9E146 /* GAPopulation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		775107729971E7BAA615322D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 775106AE866BF2C3D7CB00BE /* TSPSolver */;
+			targetProxy = 775101CEEC0CC036DA066DF3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7751042726F92539BA4111BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77510D1B66923059C047E0DA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		77510FE1915ADE044D0C310E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77510BFB4A5A948C22BCEF16 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7751001CB926D6A049CEF7E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05CE572D56F907FB4047D4FF /* Pods-TSPSolverTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TSPSolver.app/TSPSolver";
+				INFOPLIST_FILE = TSPSolverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = works.revo.TSPSolverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		7751042762FCFF9F429C8414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7751069F43E717E08F189517 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F94CE8669333A098082DEB /* Pods-TSPSolver.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TSPSolver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = works.revo.TSPSolver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		77510819370107E5FC2D5D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77510DC417DC315894A91952 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 807FA2CF1502F78D8CFE7501 /* Pods-TSPSolver.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TSPSolver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = works.revo.TSPSolver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77510E1BCC3B6E7E824AB715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B091B4B036732A1C25138B33 /* Pods-TSPSolverTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TSPSolver.app/TSPSolver";
+				INFOPLIST_FILE = TSPSolverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = works.revo.TSPSolverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7751058705DEA2AA6A33E070 /* Build configuration list for PBXProject "TSPSolver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7751042762FCFF9F429C8414 /* Debug */,
+				77510819370107E5FC2D5D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		775108FC51FE92A9B5181B5F /* Build configuration list for PBXNativeTarget "TSPSolver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77510DC417DC315894A91952 /* Debug */,
+				7751069F43E717E08F189517 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		77510F8B3DBF6659EC41D4CC /* Build configuration list for PBXNativeTarget "TSPSolverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77510E1BCC3B6E7E824AB715 /* Debug */,
+				7751001CB926D6A049CEF7E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 775103CC6F7399D73798A88F /* Project object */;
+}
