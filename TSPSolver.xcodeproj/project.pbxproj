@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		775101D2CC3325785B0CA643 /* TSPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 775103C82321198EB41361E2 /* TSPAddress.m */; };
 		775102A07C7DADAAA4022B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77510FE1915ADE044D0C310E /* Main.storyboard */; };
+		77510373D503E29832AB0C7D /* TSPMultipleEqualAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510C3BB9394117F2F4A30F /* TSPMultipleEqualAlgorithm.m */; };
 		775103952AC8AE59D796DD95 /* TSPGeneticAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510785922C88302E9224AC /* TSPGeneticAlgorithm.m */; };
 		775103B258EED759D5D4CF44 /* TSPMultipleSolverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510E4E371624A88E39E359 /* TSPMultipleSolverTests.m */; };
 		775104E0F9167FB80FFBFA96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751080D6B8E49CC31F9B0AE /* AppDelegate.m */; };
 		775105104776F335F08A3C92 /* TSPRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510D26CBD7FCA4529546A8 /* TSPRoute.m */; };
-		775105632C53EB9D2642E78A /* TSPMultipleSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751068D5C60BD310F2684B0 /* TSPMultipleSolver.m */; };
+		775105F73A8B8D101E65AD23 /* GAMultiplePopulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510895F9A1BD5292B25AAE /* GAMultiplePopulation.m */; };
 		7751066EF8249DC0D44F8745 /* TSPSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751064DF1F81D5CCC66D3FD /* TSPSolver.m */; };
-		775106C4837915E770D6E176 /* GAMultiplePopulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510C95E16F4884279D0552 /* GAMultiplePopulation.m */; };
 		775106F2909DA2E73782D6AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775102C48D7FBC8208A5F849 /* ViewController.m */; };
+		775107C07C6265057A5BA9B1 /* TSPMultipleGeneticAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510EBF46859A373D54410E /* TSPMultipleGeneticAlgorithm.m */; };
 		7751080071035718BADB0085 /* TSPMultipleRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 775108A976078CA4FAA60D52 /* TSPMultipleRoute.m */; };
+		775108C7C5EE9FB7AF4B469D /* TSPMultipleEqualDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510D1CF0CF6174AB2D1442 /* TSPMultipleEqualDeviation.m */; };
 		775108DAA14B47D73E9F3B25 /* TSPNearestAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510BEFA6E9DA4A9C4983F4 /* TSPNearestAlgorithm.m */; };
 		775108E018042916921440FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751057E7B0436993FBABE5D /* main.m */; };
 		775109C1F1C791AEEDF9E146 /* GAPopulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510BF1D6A998A683809E58 /* GAPopulation.m */; };
@@ -45,8 +47,9 @@
 		77510053E3349E1061A1A66A /* TSPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPAddress.h; sourceTree = "<group>"; };
 		775100E70B106671B580DCA2 /* TSPNearestAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPNearestAlgorithm.h; sourceTree = "<group>"; };
 		775100F2DC9647F62CCB1BF5 /* TSPSolverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSPSolverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7751012F81D30395766807C7 /* TSPMultipleGeneticAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleGeneticAlgorithm.h; sourceTree = "<group>"; };
+		775101602FC326363C0FAA15 /* GAMultiplePopulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAMultiplePopulation.h; sourceTree = "<group>"; };
 		7751017D7F159FB48C69AF0F /* GAPopulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPopulation.h; sourceTree = "<group>"; };
-		77510279C0B83BE7DBE8AD05 /* GAMultiplePopulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAMultiplePopulation.h; sourceTree = "<group>"; };
 		775102C48D7FBC8208A5F849 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7751035B0F9743F7D09C7D49 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		775103A0D954AB42980F1521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -55,14 +58,14 @@
 		7751041A1DF4D76F4E91C4C7 /* TSPPointContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPPointContract.h; sourceTree = "<group>"; };
 		7751054C454D5B6579780EA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7751057E7B0436993FBABE5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7751058D4CE3A05963DF7031 /* TSPMultipleEqualDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleEqualDeviation.h; sourceTree = "<group>"; };
 		775105BA345B76AAF2CA270A /* TSPExactAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPExactAlgorithm.h; sourceTree = "<group>"; };
 		7751064DF1F81D5CCC66D3FD /* TSPSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPSolver.m; sourceTree = "<group>"; };
 		77510679CDBB161206A96ABF /* TSPSolverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSPSolverTests.m; sourceTree = "<group>"; };
-		7751068D5C60BD310F2684B0 /* TSPMultipleSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleSolver.m; sourceTree = "<group>"; };
 		77510785922C88302E9224AC /* TSPGeneticAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPGeneticAlgorithm.m; sourceTree = "<group>"; };
 		775107BD6AFCAAA3A925D7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		775107E6EB0A239F65657FF4 /* TSPMultipleSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleSolver.h; sourceTree = "<group>"; };
 		7751080D6B8E49CC31F9B0AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		77510895F9A1BD5292B25AAE /* GAMultiplePopulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAMultiplePopulation.m; sourceTree = "<group>"; };
 		775108A976078CA4FAA60D52 /* TSPMultipleRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleRoute.m; sourceTree = "<group>"; };
 		775108DA2DB7902D31EE817D /* TSPRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPRoute.h; sourceTree = "<group>"; };
 		775109154D394448286760BB /* TSPSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSPSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,11 +76,14 @@
 		77510BEFA6E9DA4A9C4983F4 /* TSPNearestAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPNearestAlgorithm.m; sourceTree = "<group>"; };
 		77510BF1D6A998A683809E58 /* GAPopulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPopulation.m; sourceTree = "<group>"; };
 		77510BFB4A5A948C22BCEF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		77510C95E16F4884279D0552 /* GAMultiplePopulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAMultiplePopulation.m; sourceTree = "<group>"; };
+		77510C3BB9394117F2F4A30F /* TSPMultipleEqualAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleEqualAlgorithm.m; sourceTree = "<group>"; };
+		77510CF7733AF86F9C42B939 /* TSPMultipleEqualAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleEqualAlgorithm.h; sourceTree = "<group>"; };
 		77510D1B66923059C047E0DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77510D1CF0CF6174AB2D1442 /* TSPMultipleEqualDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleEqualDeviation.m; sourceTree = "<group>"; };
 		77510D26CBD7FCA4529546A8 /* TSPRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPRoute.m; sourceTree = "<group>"; };
 		77510DB84C65873A46CEB806 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77510E4E371624A88E39E359 /* TSPMultipleSolverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleSolverTests.m; sourceTree = "<group>"; };
+		77510EBF46859A373D54410E /* TSPMultipleGeneticAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleGeneticAlgorithm.m; sourceTree = "<group>"; };
 		807FA2CF1502F78D8CFE7501 /* Pods-TSPSolver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolver/Pods-TSPSolver.debug.xcconfig"; sourceTree = "<group>"; };
 		B091B4B036732A1C25138B33 /* Pods-TSPSolverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolverTests/Pods-TSPSolverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8F94CE8669333A098082DEB /* Pods-TSPSolver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolver.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolver/Pods-TSPSolver.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,12 +123,9 @@
 		77510384773F6B3FFA420843 /* Multiple */ = {
 			isa = PBXGroup;
 			children = (
-				7751068D5C60BD310F2684B0 /* TSPMultipleSolver.m */,
-				775107E6EB0A239F65657FF4 /* TSPMultipleSolver.h */,
-				77510C95E16F4884279D0552 /* GAMultiplePopulation.m */,
-				77510279C0B83BE7DBE8AD05 /* GAMultiplePopulation.h */,
 				775108A976078CA4FAA60D52 /* TSPMultipleRoute.m */,
 				77510B7C3EC9AB2AF154CD81 /* TSPMultipleRoute.h */,
+				77510E24406E15DCB45AC1C5 /* Algorithms */,
 			);
 			path = Multiple;
 			sourceTree = "<group>";
@@ -173,6 +176,17 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		775108EF59D80A65B6D1F031 /* Genetic */ = {
+			isa = PBXGroup;
+			children = (
+				7751012F81D30395766807C7 /* TSPMultipleGeneticAlgorithm.h */,
+				77510EBF46859A373D54410E /* TSPMultipleGeneticAlgorithm.m */,
+				77510895F9A1BD5292B25AAE /* GAMultiplePopulation.m */,
+				775101602FC326363C0FAA15 /* GAMultiplePopulation.h */,
+			);
+			path = Genetic;
+			sourceTree = "<group>";
+		};
 		77510B000BFE6D2F44332151 /* Genetic */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +207,18 @@
 				DAF25AAC71CBE6D34C36491A /* Pods */,
 				841B10EDD491A0A90F7256E4 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		77510E24406E15DCB45AC1C5 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				775108EF59D80A65B6D1F031 /* Genetic */,
+				77510C3BB9394117F2F4A30F /* TSPMultipleEqualAlgorithm.m */,
+				77510CF7733AF86F9C42B939 /* TSPMultipleEqualAlgorithm.h */,
+				77510D1CF0CF6174AB2D1442 /* TSPMultipleEqualDeviation.m */,
+				7751058D4CE3A05963DF7031 /* TSPMultipleEqualDeviation.h */,
+			);
+			path = Algorithms;
 			sourceTree = "<group>";
 		};
 		77510F7B30530D4C06C8DB56 /* Products */ = {
@@ -437,9 +463,11 @@
 				775108DAA14B47D73E9F3B25 /* TSPNearestAlgorithm.m in Sources */,
 				775103952AC8AE59D796DD95 /* TSPGeneticAlgorithm.m in Sources */,
 				775109C1F1C791AEEDF9E146 /* GAPopulation.m in Sources */,
-				775105632C53EB9D2642E78A /* TSPMultipleSolver.m in Sources */,
-				775106C4837915E770D6E176 /* GAMultiplePopulation.m in Sources */,
 				7751080071035718BADB0085 /* TSPMultipleRoute.m in Sources */,
+				775107C07C6265057A5BA9B1 /* TSPMultipleGeneticAlgorithm.m in Sources */,
+				775105F73A8B8D101E65AD23 /* GAMultiplePopulation.m in Sources */,
+				77510373D503E29832AB0C7D /* TSPMultipleEqualAlgorithm.m in Sources */,
+				775108C7C5EE9FB7AF4B469D /* TSPMultipleEqualDeviation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

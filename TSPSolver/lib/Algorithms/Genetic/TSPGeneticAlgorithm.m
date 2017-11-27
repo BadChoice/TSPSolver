@@ -39,7 +39,7 @@
             notChangedEvolutions++;
         }
         if(notChangedEvolutions == self.evolutionImprovementThreshold){
-            NSLog(@"Evolutions: %d, Distance %.2f Km", i, lastBestValue/1000);
+            //NSLog(@"Evolutions: %d, Distance %.2f Km", i, lastBestValue/1000);
             return population.best;
         }
     }

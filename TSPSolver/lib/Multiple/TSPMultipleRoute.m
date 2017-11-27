@@ -3,6 +3,7 @@
 #import "TSPSolver.h"
 #import "TSPNearestAlgorithm.h"
 #import "TSPGeneticAlgorithm.h"
+#import "TSPSolverContract.h"
 
 @implementation TSPMultipleRoute {
     double mMaxDistance;
@@ -28,10 +29,18 @@
     return [self.routes flatten:@"locations"];
 }
 
-- (void)optimize{
+- (instancetype)optimize {
     self.routes = [self.routes map:^id(TSPRoute* route, NSUInteger idx) {
-        return [TSPSolver solve:route.locations startingAt:route.start with:[TSPNearestAlgorithm new]];
+        return [TSPSolver solve:route.locations startingAt:route.start];
     }].mutableCopy;
+    return self;
+}
+
+- (instancetype)optimize:(id<TSPSolverContract>)algorithm{
+    self.routes = [self.routes map:^id(TSPRoute* route, NSUInteger idx) {
+        return [TSPSolver solve:route.locations startingAt:route.start with:algorithm];
+    }].mutableCopy;
+    return self;
 }
 
 -(NSArray*)log{

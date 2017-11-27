@@ -4,11 +4,11 @@
 #import "TSPExactAlgorithm.h"
 #import "TSPNearestAlgorithm.h"
 #import "TSPGeneticAlgorithm.h"
-#import "TSPMultipleSolver.h"
+#import "TSPMultipleGeneticAlgorithm.h"
 #import "GAMultiplePopulation.h"
 #import <XCTest/XCTest.h>
 
-@interface TSPMultipleSolver()
+@interface TSPMultipleGeneticAlgorithm()
 + (TSPMultipleRoute *)crossover:(TSPMultipleRoute *)parent1 parent2:(TSPMultipleRoute *)parent2;
 + (void)mutate:(TSPMultipleRoute*)child;
 @end
@@ -64,7 +64,7 @@
     TSPMultipleRoute *parent1   = [GAMultiplePopulation generateRandomIndividual:4 start:generalPrim  locations:locations];
     TSPMultipleRoute *parent2   = [GAMultiplePopulation generateRandomIndividual:4 start:generalPrim  locations:locations];
 
-    TSPMultipleRoute *child     = [TSPMultipleSolver crossover:parent1 parent2:parent2];
+    TSPMultipleRoute *child     = [TSPMultipleGeneticAlgorithm crossover:parent1 parent2:parent2];
 
 }
 
@@ -72,7 +72,7 @@
     NSArray* locations          = [self sampleData];
     TSPAddress* generalPrim     = [TSPAddress make:@"generalPrim     " latitude:41.731506 longitude:1.817945];
 
-    TSPMultipleRoute* routes    = [TSPMultipleSolver solve:3 locations:locations startingAt:generalPrim];
+    TSPMultipleRoute* routes    = [TSPMultipleGeneticAlgorithm solve:3 locations:locations startingAt:generalPrim];
 
     [routes.routes each:^(TSPRoute* route) {
         [self printRoute:route];
@@ -84,7 +84,7 @@
     TSPAddress* generalPrim     = [TSPAddress make:@"generalPrim     " latitude:41.731506 longitude:1.817945];
 
     [self measureBlock:^{
-        TSPMultipleRoute* routes    = [TSPMultipleSolver solve:3 locations:locations startingAt:generalPrim];
+        TSPMultipleRoute* routes    = [TSPMultipleGeneticAlgorithm solve:3 locations:locations startingAt:generalPrim];
     }];
 }
 @end

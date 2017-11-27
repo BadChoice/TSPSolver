@@ -1,4 +1,4 @@
-#import <Collection/NSArray+Collection.h>
+#import "NSArray+Collection.h"
 #import "GAMultiplePopulation.h"
 
 @implementation GAMultiplePopulation

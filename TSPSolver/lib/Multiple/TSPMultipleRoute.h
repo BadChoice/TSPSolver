@@ -2,6 +2,8 @@
 
 #import "TSPRoute.h"
 
+@protocol TSPSolverContract;
+
 @interface TSPMultipleRoute : NSObject
 @property(strong, nonatomic) NSMutableArray<TSPRoute*>*routes;
 
@@ -9,7 +11,8 @@
 
 - (NSArray *)getAllPoints;
 
-- (void)optimize;
+- (instancetype)optimize;
+- (instancetype)optimize:(id<TSPSolverContract>)algorithm;
 
 - (NSArray *)log;
 - (void) validate;

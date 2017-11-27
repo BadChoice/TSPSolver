@@ -11,15 +11,19 @@
 #import "TSPAddress.h"
 #import "TSPRoute.h"
 #import "TSPSolver.h"
-#import "TSPMultipleSolver.h"
+#import "TSPMultipleGeneticAlgorithm.h"
 #import "TSPNearestAlgorithm.h"
 #import "TSPGeneticAlgorithm.h"
+#import "TSPMultipleEqualAlgorithm.h"
+#import "TSPMultipleEqualDeviation.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    NSArray * data;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,7 +61,10 @@
     TSPAddress* pius            = [TSPAddress make:@"pius" latitude:41.7408343 longitude:1.8338648];
     TSPAddress* ausa            = [TSPAddress make:@"ausa" latitude:41.7383325 longitude:1.8459353];
 
-    return @[revo, ataneu, baixador, stk, joviat, globus, milcentenari, museuTecnica, domenech, santJoan ,itaca, espill, hisenda, abacus, carpa, congost, mcdonalds, pius, ausa];
+    if(!data){
+        data = [@[revo, ataneu, baixador, stk, joviat, globus, milcentenari, museuTecnica, domenech, santJoan ,itaca, espill, hisenda, abacus, carpa, congost, mcdonalds, pius, ausa].shuffled take:15];
+    }
+    return data;
 }
 
 -(MKPointAnnotation*)drawAddress:(TSPAddress*)address{
@@ -79,7 +86,9 @@
 
 - (IBAction)solve3:(id)sender {
     [self clearOverrides];
-    TSPMultipleRoute* multipleRoute = [TSPMultipleSolver solve:3 locations:self.sampleData startingAt:self.startPoint];
+    //TSPMultipleRoute* multipleRoute = [TSPMultipleGeneticAlgorithm solve:3 locations:self.sampleData startingAt:self.startPoint];
+    //TSPMultipleRoute* multipleRoute = [TSPMultipleEqualAlgorithm solve:3 locations:self.sampleData startingAt:self.startPoint];
+    TSPMultipleRoute* multipleRoute = [TSPMultipleEqualDeviation solve:3 locations:self.sampleData startingAt:self.startPoint];
     [multipleRoute.routes each:^(TSPRoute* route) {
         [self drawRoute:route];
     }];

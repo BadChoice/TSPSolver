@@ -1,6 +1,6 @@
-#import <Collection/NSArray+Collection.h>
-#import <Collection/RVCollection.h>
-#import "TSPMultipleSolver.h"
+#import "NSArray+Collection.h"
+#import "RVCollection.h"
+#import "TSPMultipleGeneticAlgorithm.h"
 #import "GAMultiplePopulation.h"
 #import "TSPSolver.h"
 #import "TSPGeneticAlgorithm.h"
@@ -12,7 +12,7 @@
 #define TOURNAMENT_SIZE 5
 #define MUTATION_RATE 0.015
 
-@implementation TSPMultipleSolver
+@implementation TSPMultipleGeneticAlgorithm
 + (TSPMultipleRoute*)solve:(int)drivers locations:(NSArray<TSPPointContract> *)locations startingAt:(NSObject <TSPPointContract> *)start{
     GAMultiplePopulation *population = [GAMultiplePopulation make:POPULATION_SIZE drivers:drivers locations:locations start:start];
     for (int i = 0; i < EVOLUTIONS; i++) {
@@ -49,7 +49,7 @@
 
         // Mutate the new population a bit to add some new genetic material
         [self mutate:child];
-        [child optimize];
+        [child optimize:[TSPNearestAlgorithm new]];
 
         // Add child to new population
         newPopulation.individuals[i] = child;
