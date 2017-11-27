@@ -7,8 +7,7 @@
 
 @implementation TSPMultipleEqualAlgorithm
 
-+ (TSPMultipleRoute*)solve:(int)drivers locations:(NSArray<TSPPointContract> *)locations startingAt:(NSObject <TSPPointContract> *)start{
-
+- (TSPMultipleRoute*)solve:(int)drivers locations:(NSArray<TSPPointContract> *)locations startingAt:(NSObject <TSPPointContract> *)start{
     TSPRoute * bestRoute = [TSPSolver solve:locations startingAt:start with:[TSPNearestAlgorithm new]];
 
     int slice = ceil( (float)locations.count / (float)drivers) ;

@@ -1,9 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "TSPMultipleSolverContract.h"
 
-@protocol TSPPointContract;
-@class TSPMultipleRoute;
+#import "TSPMultipleRoute.h";
+#import "TSPPointContract.h";
 
-@interface TSPMultipleEqualDeviation : NSObject <TSPMultipleSolverContract>
+@protocol TSPMultipleSolverContract <NSObject>
 - (TSPMultipleRoute*)solve:(int)drivers locations:(NSArray<TSPPointContract> *)locations startingAt:(NSObject <TSPPointContract> *)start;
 @end

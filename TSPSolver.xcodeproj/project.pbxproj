@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		775101D2CC3325785B0CA643 /* TSPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 775103C82321198EB41361E2 /* TSPAddress.m */; };
 		775102A07C7DADAAA4022B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77510FE1915ADE044D0C310E /* Main.storyboard */; };
+		77510330BF8DB7F870FEC86F /* TSPMultipleSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 775102342260203DAE523379 /* TSPMultipleSolver.m */; };
 		77510373D503E29832AB0C7D /* TSPMultipleEqualAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510C3BB9394117F2F4A30F /* TSPMultipleEqualAlgorithm.m */; };
 		775103952AC8AE59D796DD95 /* TSPGeneticAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510785922C88302E9224AC /* TSPGeneticAlgorithm.m */; };
 		775103B258EED759D5D4CF44 /* TSPMultipleSolverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510E4E371624A88E39E359 /* TSPMultipleSolverTests.m */; };
@@ -50,6 +51,7 @@
 		7751012F81D30395766807C7 /* TSPMultipleGeneticAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleGeneticAlgorithm.h; sourceTree = "<group>"; };
 		775101602FC326363C0FAA15 /* GAMultiplePopulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAMultiplePopulation.h; sourceTree = "<group>"; };
 		7751017D7F159FB48C69AF0F /* GAPopulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPopulation.h; sourceTree = "<group>"; };
+		775102342260203DAE523379 /* TSPMultipleSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleSolver.m; sourceTree = "<group>"; };
 		775102C48D7FBC8208A5F849 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7751035B0F9743F7D09C7D49 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		775103A0D954AB42980F1521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		7751058D4CE3A05963DF7031 /* TSPMultipleEqualDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleEqualDeviation.h; sourceTree = "<group>"; };
 		775105BA345B76AAF2CA270A /* TSPExactAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPExactAlgorithm.h; sourceTree = "<group>"; };
 		7751064DF1F81D5CCC66D3FD /* TSPSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPSolver.m; sourceTree = "<group>"; };
+		7751067160E9290999311236 /* TSPMultipleSolverContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleSolverContract.h; sourceTree = "<group>"; };
 		77510679CDBB161206A96ABF /* TSPSolverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSPSolverTests.m; sourceTree = "<group>"; };
 		77510785922C88302E9224AC /* TSPGeneticAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPGeneticAlgorithm.m; sourceTree = "<group>"; };
 		775107BD6AFCAAA3A925D7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		77510DB84C65873A46CEB806 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77510E4E371624A88E39E359 /* TSPMultipleSolverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleSolverTests.m; sourceTree = "<group>"; };
 		77510EBF46859A373D54410E /* TSPMultipleGeneticAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPMultipleGeneticAlgorithm.m; sourceTree = "<group>"; };
+		77510F4D7ED15B1D50CDE397 /* TSPMultipleSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleSolver.h; sourceTree = "<group>"; };
 		807FA2CF1502F78D8CFE7501 /* Pods-TSPSolver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolver/Pods-TSPSolver.debug.xcconfig"; sourceTree = "<group>"; };
 		B091B4B036732A1C25138B33 /* Pods-TSPSolverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolverTests/Pods-TSPSolverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8F94CE8669333A098082DEB /* Pods-TSPSolver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSPSolver.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSPSolver/Pods-TSPSolver.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				775108A976078CA4FAA60D52 /* TSPMultipleRoute.m */,
 				77510B7C3EC9AB2AF154CD81 /* TSPMultipleRoute.h */,
 				77510E24406E15DCB45AC1C5 /* Algorithms */,
+				7751067160E9290999311236 /* TSPMultipleSolverContract.h */,
 			);
 			path = Multiple;
 			sourceTree = "<group>";
@@ -172,6 +177,8 @@
 				7751041A1DF4D76F4E91C4C7 /* TSPPointContract.h */,
 				77510805240B84E64597CE19 /* Algorithms */,
 				77510384773F6B3FFA420843 /* Multiple */,
+				775102342260203DAE523379 /* TSPMultipleSolver.m */,
+				77510F4D7ED15B1D50CDE397 /* TSPMultipleSolver.h */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -468,6 +475,7 @@
 				775105F73A8B8D101E65AD23 /* GAMultiplePopulation.m in Sources */,
 				77510373D503E29832AB0C7D /* TSPMultipleEqualAlgorithm.m in Sources */,
 				775108C7C5EE9FB7AF4B469D /* TSPMultipleEqualDeviation.m in Sources */,
+				77510330BF8DB7F870FEC86F /* TSPMultipleSolver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

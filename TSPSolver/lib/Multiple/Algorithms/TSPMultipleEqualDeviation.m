@@ -9,18 +9,18 @@
 
 @implementation TSPMultipleEqualDeviation
 
-+ (TSPMultipleRoute*)solve:(int)drivers locations:(NSArray<TSPPointContract> *)locations startingAt:(NSObject <TSPPointContract> *)start{
+- (TSPMultipleRoute*)solve:(int)drivers locations:(NSArray<TSPPointContract> *)locations startingAt:(NSObject <TSPPointContract> *)start{
     TSPRoute * bestRoute = [TSPSolver solve:locations startingAt:start with:[TSPNearestAlgorithm new]];
     NSMutableArray * solutions = [NSMutableArray new];
     for(int i = 0; i < VARIATIONS; i++){
         [solutions addObject:
-               [self.class variation:drivers route:bestRoute]
+               [self variation:drivers route:bestRoute]
         ];
     }
-    return [self.class best:solutions];
+    return [self best:solutions];
 }
 
-+ (TSPMultipleRoute *)variation:(int)drivers route:(TSPRoute*)route{
+- (TSPMultipleRoute *)variation:(int)drivers route:(TSPRoute*)route{
     NSMutableArray * slices = [NSMutableArray new];
     [slices addObject:@(0)];
     for(int i = 0; i < drivers - 1; i++){
@@ -41,7 +41,7 @@
     return [[TSPMultipleRoute make:routes] optimize];
 }
 
-+(TSPMultipleRoute *)best:(NSArray*)routes{
+- (TSPMultipleRoute *)best:(NSArray*)routes{
     return [routes minObject:@"maxRoute"];
 }
 @end

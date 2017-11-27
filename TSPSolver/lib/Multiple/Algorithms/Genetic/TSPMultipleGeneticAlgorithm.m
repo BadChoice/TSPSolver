@@ -13,10 +13,11 @@
 #define MUTATION_RATE 0.015
 
 @implementation TSPMultipleGeneticAlgorithm
-+ (TSPMultipleRoute*)solve:(int)drivers locations:(NSArray<TSPPointContract> *)locations startingAt:(NSObject <TSPPointContract> *)start{
+
+- (TSPMultipleRoute*)solve:(int)drivers locations:(NSArray<TSPPointContract> *)locations startingAt:(NSObject <TSPPointContract> *)start{
     GAMultiplePopulation *population = [GAMultiplePopulation make:POPULATION_SIZE drivers:drivers locations:locations start:start];
     for (int i = 0; i < EVOLUTIONS; i++) {
-        population = [self.class evolve:population];
+        population = [self evolve:population];
     }
     TSPMultipleRoute *best = population.best;
     best.routes = [best.routes map:^id(TSPRoute *route, NSUInteger idx) {
@@ -27,7 +28,7 @@
     return best;
 }
 
-+ (GAMultiplePopulation*)evolve:(GAMultiplePopulation*)population{
+- (GAMultiplePopulation*)evolve:(GAMultiplePopulation*)population{
     GAMultiplePopulation * newPopulation = [GAMultiplePopulation make:POPULATION_SIZE];
 
     // Keep our best individual if elitism is enabled
@@ -58,7 +59,7 @@
     return newPopulation;
 }
 
-+ (TSPMultipleRoute *)tournamentSelection:(GAMultiplePopulation *)population {
+- (TSPMultipleRoute *)tournamentSelection:(GAMultiplePopulation *)population {
     // Create a tournament population
     GAMultiplePopulation *tournament = [GAMultiplePopulation make:TOURNAMENT_SIZE];
     // For each place in the tournament get a random candidate tour and
@@ -73,7 +74,7 @@
     return best;
 }
 
-+ (TSPMultipleRoute *)crossover:(TSPMultipleRoute *)parent1 parent2:(TSPMultipleRoute *)parent2 {
+- (TSPMultipleRoute *)crossover:(TSPMultipleRoute *)parent1 parent2:(TSPMultipleRoute *)parent2 {
     TSPMultipleRoute* newRoutes = [TSPMultipleRoute new];
     newRoutes.routes            = [NSMutableArray new];
 
@@ -97,7 +98,7 @@
     return newRoutes;
 }
 
-+ (void)mutate:(TSPMultipleRoute*)individual{
+- (void)mutate:(TSPMultipleRoute*)individual{
     for(int routePos = 0; routePos < individual.routes.count; routePos++){
         TSPRoute* route = individual.routes[routePos];
         for(int tourPos1 = 0; tourPos1 < route.locations.count; tourPos1++) {

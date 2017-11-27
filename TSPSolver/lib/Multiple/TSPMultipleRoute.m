@@ -4,6 +4,7 @@
 #import "TSPNearestAlgorithm.h"
 #import "TSPGeneticAlgorithm.h"
 #import "TSPSolverContract.h"
+#import "TSPPointContract.h"
 
 @implementation TSPMultipleRoute {
     double mMaxDistance;

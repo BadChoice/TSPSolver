@@ -16,6 +16,7 @@
 #import "TSPGeneticAlgorithm.h"
 #import "TSPMultipleEqualAlgorithm.h"
 #import "TSPMultipleEqualDeviation.h"
+#import "TSPMultipleSolver.h"
 
 @interface ViewController ()
 
@@ -62,7 +63,7 @@
     TSPAddress* ausa            = [TSPAddress make:@"ausa" latitude:41.7383325 longitude:1.8459353];
 
     if(!data){
-        data = [@[revo, ataneu, baixador, stk, joviat, globus, milcentenari, museuTecnica, domenech, santJoan ,itaca, espill, hisenda, abacus, carpa, congost, mcdonalds, pius, ausa].shuffled take:15];
+        data = [@[revo, ataneu, baixador, stk, joviat, globus, milcentenari, museuTecnica, domenech, santJoan ,itaca, espill, hisenda, abacus, carpa, congost, mcdonalds, pius, ausa].shuffled take:10];
     }
     return data;
 }
@@ -86,9 +87,10 @@
 
 - (IBAction)solve3:(id)sender {
     [self clearOverrides];
-    //TSPMultipleRoute* multipleRoute = [TSPMultipleGeneticAlgorithm solve:3 locations:self.sampleData startingAt:self.startPoint];
-    //TSPMultipleRoute* multipleRoute = [TSPMultipleEqualAlgorithm solve:3 locations:self.sampleData startingAt:self.startPoint];
-    TSPMultipleRoute* multipleRoute = [TSPMultipleEqualDeviation solve:3 locations:self.sampleData startingAt:self.startPoint];
+//    TSPMultipleRoute * multipleRoute = [TSPMultipleSolver solve:3 locations:self.sampleData startingAt:self.startPoint with:[TSPMultipleGeneticAlgorithm new]];
+//    TSPMultipleRoute * multipleRoute = [TSPMultipleSolver solve:3 locations:self.sampleData startingAt:self.startPoint with:[TSPMultipleEqualAlgorithm new]];
+    TSPMultipleRoute * multipleRoute = [TSPMultipleSolver solve:3 locations:self.sampleData startingAt:self.startPoint with:[TSPMultipleEqualDeviation new]];
+
     [multipleRoute.routes each:^(TSPRoute* route) {
         [self drawRoute:route];
     }];
