@@ -20,12 +20,8 @@
 + (GAMultiplePopulation*)evolve:(GAMultiplePopulation*)population{
     GAMultiplePopulation * newPopulation = [GAMultiplePopulation make:POPULATION_SIZE];
 
-    [population.individuals each:^(TSPMultipleRoute *multiple) {
-        int c = [multiple.routes flatten:@"locations"].distinct.count;
-        if( c != 8){
+    [self validatePopulation:population];
 
-        }
-    }];
     // Keep our best individual if elitism is enabled
     int elitismOffset = 0;
     if (ELITISM) {
@@ -33,40 +29,44 @@
         elitismOffset = 1;
     }
 
+    [self validatePopulation:population];
+
     // Crossover population
     // Loop over the new population's size and create individuals from
     // Current population
     for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
         // Select parents
+        [self validatePopulation:population];
         TSPMultipleRoute * parent1 = [self tournamentSelection:population];
+        [self validatePopulation:population];
         TSPMultipleRoute * parent2 = [self tournamentSelection:population];
+        [self validatePopulation:population];
         // Crossover parents
         TSPMultipleRoute *child = [self crossover:parent1 parent2:parent2];
+        [self validatePopulation:population];
         // Add child to new population
         newPopulation.individuals[i] = child;
     }
 
-    [newPopulation.individuals each:^(TSPMultipleRoute *multiple) {
-        int c = [multiple.routes flatten:@"locations"].distinct.count;
-        if( c != 8){
-
-        }
-    }];
+    [self validatePopulation:population];
 
     // Mutate the new population a bit to add some new genetic material
     for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
         [self mutate:newPopulation.individuals[i]];
         [newPopulation.individuals[i] optimize];
+        [self validatePopulation:population];
     }
 
+    return newPopulation;
+}
+
++ (void)validatePopulation:(GAMultiplePopulation *)population {
     [population.individuals each:^(TSPMultipleRoute *multiple) {
         int c = [multiple.routes flatten:@"locations"].distinct.count;
         if( c != 8){
 
         }
     }];
-
-    return newPopulation;
 }
 
 
