@@ -6,7 +6,7 @@
 #define POPULATION_SIZE 50
 #define TOURNAMENT_SIZE 5
 #define MUTATION_RATE 0.015
-#define EVLOUTIONS 100
+#define EVOLUTIONS 100
 
 @implementation TSPGeneticAlgorithm
 
@@ -15,7 +15,7 @@
  */
 - (TSPRoute *)solve:(NSArray<TSPPointContract>*)locations startingAt:(NSObject <TSPPointContract> *)start {
     GAPopulation *population = [GAPopulation make:POPULATION_SIZE locations:locations start:start];
-    for (int i = 0; i < EVLOUTIONS; i++) {
+    for (int i = 0; i < EVOLUTIONS; i++) {
         population = [self evolve:population];
     }
     return population.best;
@@ -26,7 +26,7 @@
     // Keep our best individual if elitism is enabled
     int elitismOffset = 0;
     if (ELITISM) {
-        newPopulation.tours[elitismOffset] = population.best;
+        newPopulation.individuals[elitismOffset] = population.best;
         elitismOffset = 1;
     }
 
@@ -40,12 +40,12 @@
         // Crossover parents
         TSPRoute *child = [self crossover:parent1 parent2:parent2];
         // Add child to new population
-        newPopulation.tours[i] = child;
+        newPopulation.individuals[i] = child;
     }
 
     // Mutate the new population a bit to add some new genetic material
     for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
-        [self mutate:newPopulation.tours[i]];
+        [self mutate:newPopulation.individuals[i]];
     }
 
     return newPopulation;
@@ -59,7 +59,7 @@
     // add it
     for (int i = 0; i < TOURNAMENT_SIZE; i++) {
         int randomId = arc4random_uniform(POPULATION_SIZE);
-        tournament.tours[i]  = population.tours[randomId];
+        tournament.individuals[i]  = population.individuals[randomId];
     }
     // Get the fittest tour
     return tournament.best;
@@ -109,7 +109,6 @@
 }
 
 - (void)mutate:(TSPRoute *)route {
-// Loop through tour cities
     for(int tourPos1=0; tourPos1 < route.locations.count; tourPos1++){
         // Apply mutation rate
         if(((float)arc4random() / UINT32_MAX) < MUTATION_RATE){

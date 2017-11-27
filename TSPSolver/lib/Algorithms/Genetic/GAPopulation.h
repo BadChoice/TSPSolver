@@ -4,7 +4,7 @@
 #import "TSPRoute.h"
 
 @interface GAPopulation : NSObject
-@property (strong, nonatomic) NSMutableArray * tours;
+@property (strong, nonatomic) NSMutableArray * individuals;
 
 + (GAPopulation *)make:(int)count;
 + (GAPopulation *)make:(int)count locations:(NSArray<TSPPointContract>*)locations start:(NSObject<TSPPointContract>*)start;
