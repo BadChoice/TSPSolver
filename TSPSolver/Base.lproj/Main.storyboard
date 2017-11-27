@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,57 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ga5-Cr-z6w">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="592"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIJ-Kk-Id2">
+                                <rect key="frame" x="13" y="617" width="53" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IwT-GW-lyh"/>
+                                    <constraint firstAttribute="width" constant="53" id="dA4-ZX-BXD"/>
+                                </constraints>
+                                <state key="normal" title="Solve: 1"/>
+                                <connections>
+                                    <action selector="solve1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R8M-Jl-Rbn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOJ-Lj-6dk">
+                                <rect key="frame" x="285" y="617" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Thj-LK-nIz"/>
+                                    <constraint firstAttribute="width" constant="55" id="vlV-nc-AgK"/>
+                                </constraints>
+                                <state key="normal" title="Solve: 3"/>
+                                <connections>
+                                    <action selector="solve3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2SR-C1-seK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TOJ-Lj-6dk" secondAttribute="trailing" constant="35" id="3GY-xP-Xrm"/>
+                            <constraint firstItem="KIJ-Kk-Id2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="13" id="7Al-ae-vR5"/>
+                            <constraint firstItem="ga5-Cr-z6w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jlo-Tw-xvW"/>
+                            <constraint firstItem="KIJ-Kk-Id2" firstAttribute="top" secondItem="ga5-Cr-z6w" secondAttribute="bottom" constant="25" id="LrE-gA-28I"/>
+                            <constraint firstItem="ga5-Cr-z6w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cqT-xX-kPW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KIJ-Kk-Id2" secondAttribute="bottom" constant="20" id="em3-qV-H6Y"/>
+                            <constraint firstItem="ga5-Cr-z6w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jjX-Qr-Mc7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TOJ-Lj-6dk" secondAttribute="bottom" constant="20" id="yse-1I-Y8c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapview" destination="ga5-Cr-z6w" id="nus-bm-IK4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

@@ -72,7 +72,7 @@
     NSArray* locations          = [self sampleData];
     TSPAddress* generalPrim     = [TSPAddress make:@"generalPrim     " latitude:41.731506 longitude:1.817945];
 
-    TSPMultipleRoute* routes    = [TSPMultipleSolver solve:3 locations:locations startingAt:generalPrim];
+    TSPMultipleRoute* routes    = [TSPMultipleSolver solve:5 locations:locations startingAt:generalPrim];
 
     [routes.routes each:^(TSPRoute* route) {
         [self printRoute:route];

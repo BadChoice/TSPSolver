@@ -73,6 +73,14 @@
                 // Get a second random position in the tour
                 int route2Pos = arc4random_uniform(individual.routes.count);
                 TSPRoute* route2 = individual.routes[route2Pos];
+
+                if(route2.locations.count == 0){    //When second array is empty
+                    NSObject <TSPPointContract> *city1 = route.locations[tourPos1];
+                    [route2.locations addObject:city1];
+                    [route.locations removeObject:city1];
+                    return;
+                }
+
                 int tourPos2 = arc4random_uniform(route2.locations.count);
 
                 // Get the cities at target position in tour
