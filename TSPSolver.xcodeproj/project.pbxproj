@@ -17,6 +17,7 @@
 		775105104776F335F08A3C92 /* TSPRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510D26CBD7FCA4529546A8 /* TSPRoute.m */; };
 		775105F73A8B8D101E65AD23 /* GAMultiplePopulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510895F9A1BD5292B25AAE /* GAMultiplePopulation.m */; };
 		7751066EF8249DC0D44F8745 /* TSPSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751064DF1F81D5CCC66D3FD /* TSPSolver.m */; };
+		775106E940D5A351EC58AD2D /* TSPSolverGoogleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510499DF40B29A5AB10E5C /* TSPSolverGoogleTests.m */; };
 		775106F2909DA2E73782D6AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775102C48D7FBC8208A5F849 /* ViewController.m */; };
 		775107C07C6265057A5BA9B1 /* TSPMultipleGeneticAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510EBF46859A373D54410E /* TSPMultipleGeneticAlgorithm.m */; };
 		7751080071035718BADB0085 /* TSPMultipleRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 775108A976078CA4FAA60D52 /* TSPMultipleRoute.m */; };
@@ -58,6 +59,7 @@
 		775103A7C3812D1938223C3E /* TSPExactAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPExactAlgorithm.m; sourceTree = "<group>"; };
 		775103C82321198EB41361E2 /* TSPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPAddress.m; sourceTree = "<group>"; };
 		7751041A1DF4D76F4E91C4C7 /* TSPPointContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPPointContract.h; sourceTree = "<group>"; };
+		77510499DF40B29A5AB10E5C /* TSPSolverGoogleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPSolverGoogleTests.m; sourceTree = "<group>"; };
 		7751054C454D5B6579780EA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7751057E7B0436993FBABE5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7751058D4CE3A05963DF7031 /* TSPMultipleEqualDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPMultipleEqualDeviation.h; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				775107BD6AFCAAA3A925D7A1 /* Info.plist */,
 				77510679CDBB161206A96ABF /* TSPSolverTests.m */,
 				77510E4E371624A88E39E359 /* TSPMultipleSolverTests.m */,
+				77510499DF40B29A5AB10E5C /* TSPSolverGoogleTests.m */,
 			);
 			path = TSPSolverTests;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			files = (
 				77510B2592B90DA8C4B76305 /* TSPSolverTests.m in Sources */,
 				775103B258EED759D5D4CF44 /* TSPMultipleSolverTests.m in Sources */,
+				775106E940D5A351EC58AD2D /* TSPSolverGoogleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
