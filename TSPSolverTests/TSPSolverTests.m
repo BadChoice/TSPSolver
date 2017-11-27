@@ -1,10 +1,3 @@
-//
-//  TSPSolverTests.m
-//  TSPSolverTests
-//
-//  Created by Jordi Puigdellívol on 25/11/17.
-//  Copyright © 2017 Revo Systems. All rights reserved.
-//
 #import "TSPSolver.h"
 #import "TSPAddress.h"
 #import "NSArray+Collection.h"

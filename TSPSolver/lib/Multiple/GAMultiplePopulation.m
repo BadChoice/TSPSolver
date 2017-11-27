@@ -1,6 +1,5 @@
 #import <Collection/NSArray+Collection.h>
 #import "GAMultiplePopulation.h"
-#import "TSPMultipleRoute.h"
 
 @implementation GAMultiplePopulation
 
@@ -23,11 +22,6 @@
         [routes addObject:[TSPRoute make:start locations:[theLocations splice:randomPosition]]];
     }
     [routes addObject:[TSPRoute make:start locations:theLocations]];
-
-    int c = [routes flatten:@"locations"].distinct.count;
-    if( c != 8){
-
-    }
 
     return [TSPMultipleRoute make:routes.shuffled];
 }

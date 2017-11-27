@@ -52,4 +52,8 @@
     return mMaxDistance;
 }
 
+-(void)dealloc{
+    self.routes = nil;
+}
+
 @end

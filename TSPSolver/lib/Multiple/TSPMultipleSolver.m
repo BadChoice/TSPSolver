@@ -1,9 +1,10 @@
 #import <Collection/NSArray+Collection.h>
+#import <Collection/RVCollection.h>
 #import "TSPMultipleSolver.h"
 #import "GAMultiplePopulation.h"
 
 #define POPULATION_SIZE 50
-#define EVOLUTIONS 50
+#define EVOLUTIONS 100
 #define ELITISM true
 #define TOURNAMENT_SIZE 5
 #define MUTATION_RATE 0.015
@@ -20,8 +21,6 @@
 + (GAMultiplePopulation*)evolve:(GAMultiplePopulation*)population{
     GAMultiplePopulation * newPopulation = [GAMultiplePopulation make:POPULATION_SIZE];
 
-    [self validatePopulation:population];
-
     // Keep our best individual if elitism is enabled
     int elitismOffset = 0;
     if (ELITISM) {
@@ -29,46 +28,27 @@
         elitismOffset = 1;
     }
 
-    [self validatePopulation:population];
-
     // Crossover population
     // Loop over the new population's size and create individuals from
     // Current population
     for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
         // Select parents
-        [self validatePopulation:population];
         TSPMultipleRoute * parent1 = [self tournamentSelection:population];
-        [self validatePopulation:population];
         TSPMultipleRoute * parent2 = [self tournamentSelection:population];
-        [self validatePopulation:population];
         // Crossover parents
         TSPMultipleRoute *child = [self crossover:parent1 parent2:parent2];
-        [self validatePopulation:population];
         // Add child to new population
         newPopulation.individuals[i] = child;
     }
-
-    [self validatePopulation:population];
 
     // Mutate the new population a bit to add some new genetic material
     for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
         [self mutate:newPopulation.individuals[i]];
         [newPopulation.individuals[i] optimize];
-        [self validatePopulation:population];
     }
 
     return newPopulation;
 }
-
-+ (void)validatePopulation:(GAMultiplePopulation *)population {
-    [population.individuals each:^(TSPMultipleRoute *multiple) {
-        int c = [multiple.routes flatten:@"locations"].distinct.count;
-        if( c != 8){
-
-        }
-    }];
-}
-
 
 + (TSPMultipleRoute *)tournamentSelection:(GAMultiplePopulation *)population {
     // Create a tournament population
@@ -86,10 +66,6 @@
     }
     // Get the fittest tour
     TSPMultipleRoute *best = tournament.best;
-    int c = [best.routes flatten:@"locations"].distinct.count;
-    if( c != 8){
-
-    }
     return best;
 }
 
@@ -99,27 +75,20 @@
 
     int changePoint = arc4random_uniform(parent1.routes.count);
     for(int i = 0; i < parent1.routes.count; i++){
-        if(i < changePoint) {
-            [newRoutes.routes addObject:parent1.routes[i]];
-        }
-        else{
-            [newRoutes.routes addObject:parent2.routes[i]];
-        }
+        TSPRoute* routeToCopy = (i < changePoint) ? parent1.routes[i] : parent2.routes[i];
+        [newRoutes.routes addObject:[TSPRoute make:routeToCopy.start locations:routeToCopy.locations]];
     }
+
     NSArray * alreadyAddedLocations = [NSArray new];
     for(int i = 0; i < parent1.routes.count; i++){
         [newRoutes.routes[i].locations removeObjectsInArray:alreadyAddedLocations];
         alreadyAddedLocations = [alreadyAddedLocations arrayByAddingObjectsFromArray:newRoutes.routes[i].locations];
     }
+
     //Add missing cities
     NSArray* allLocations       = [parent1.routes flatten:@"locations"];
     NSArray* locationsLeftToAdd = [allLocations diff:alreadyAddedLocations];
     newRoutes.routes[parent1.routes.count - 1].locations = [newRoutes.routes[parent1.routes.count - 1].locations arrayByAddingObjectsFromArray:locationsLeftToAdd].mutableCopy;
-
-    int c = [newRoutes.routes flatten:@"locations"].distinct.count;
-    if( c != 8){
-
-    }
 
     return newRoutes;
 }

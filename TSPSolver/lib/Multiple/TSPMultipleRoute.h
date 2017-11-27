@@ -12,6 +12,6 @@
 - (void)optimize;
 
 - (NSArray *)log;
-
+- (void) validate;
 - (double)maxRoute;
 @end
