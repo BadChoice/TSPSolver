@@ -13,7 +13,7 @@
         [route.locations addObject:nearest];
         [leftLocations removeObject:nearest];
     }
-    route.locations = [route.locations slice:1];
+    route.locations = [route.locations slice:1].mutableCopy;
     return route;
 }
 

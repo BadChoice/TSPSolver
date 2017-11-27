@@ -1,8 +1,9 @@
+#import <Collection/NSArray+Collection.h>
 #import "TSPMultipleSolver.h"
 #import "GAMultiplePopulation.h"
 
 #define POPULATION_SIZE 50
-#define EVOLUTIONS 100
+#define EVOLUTIONS 50
 #define ELITISM true
 #define TOURNAMENT_SIZE 5
 #define MUTATION_RATE 0.015
@@ -18,6 +19,13 @@
 
 + (GAMultiplePopulation*)evolve:(GAMultiplePopulation*)population{
     GAMultiplePopulation * newPopulation = [GAMultiplePopulation make:POPULATION_SIZE];
+
+    [population.individuals each:^(TSPMultipleRoute *multiple) {
+        int c = [multiple.routes flatten:@"locations"].distinct.count;
+        if( c != 8){
+
+        }
+    }];
     // Keep our best individual if elitism is enabled
     int elitismOffset = 0;
     if (ELITISM) {
@@ -38,10 +46,25 @@
         newPopulation.individuals[i] = child;
     }
 
+    [newPopulation.individuals each:^(TSPMultipleRoute *multiple) {
+        int c = [multiple.routes flatten:@"locations"].distinct.count;
+        if( c != 8){
+
+        }
+    }];
+
     // Mutate the new population a bit to add some new genetic material
     for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
         [self mutate:newPopulation.individuals[i]];
+        [newPopulation.individuals[i] optimize];
     }
+
+    [population.individuals each:^(TSPMultipleRoute *multiple) {
+        int c = [multiple.routes flatten:@"locations"].distinct.count;
+        if( c != 8){
+
+        }
+    }];
 
     return newPopulation;
 }
@@ -54,14 +77,51 @@
     // add it
     for (int i = 0; i < TOURNAMENT_SIZE; i++) {
         int randomId = arc4random_uniform(POPULATION_SIZE);
-        tournament.individuals[i]  = population.individuals[randomId];
+        TSPMultipleRoute * selected = population.individuals[randomId];
+        tournament.individuals[i]  = selected;
+        int c = [selected.routes flatten:@"locations"].distinct.count;
+        if( c != 8){
+
+        }
     }
     // Get the fittest tour
-    return tournament.best;
+    TSPMultipleRoute *best = tournament.best;
+    int c = [best.routes flatten:@"locations"].distinct.count;
+    if( c != 8){
+
+    }
+    return best;
 }
 
 + (TSPMultipleRoute *)crossover:(TSPMultipleRoute *)parent1 parent2:(TSPMultipleRoute *)parent2 {
-    return parent1;
+    TSPMultipleRoute* newRoutes = [TSPMultipleRoute new];
+    newRoutes.routes            = [NSMutableArray new];
+
+    int changePoint = arc4random_uniform(parent1.routes.count);
+    for(int i = 0; i < parent1.routes.count; i++){
+        if(i < changePoint) {
+            [newRoutes.routes addObject:parent1.routes[i]];
+        }
+        else{
+            [newRoutes.routes addObject:parent2.routes[i]];
+        }
+    }
+    NSArray * alreadyAddedLocations = [NSArray new];
+    for(int i = 0; i < parent1.routes.count; i++){
+        [newRoutes.routes[i].locations removeObjectsInArray:alreadyAddedLocations];
+        alreadyAddedLocations = [alreadyAddedLocations arrayByAddingObjectsFromArray:newRoutes.routes[i].locations];
+    }
+    //Add missing cities
+    NSArray* allLocations       = [parent1.routes flatten:@"locations"];
+    NSArray* locationsLeftToAdd = [allLocations diff:alreadyAddedLocations];
+    newRoutes.routes[parent1.routes.count - 1].locations = [newRoutes.routes[parent1.routes.count - 1].locations arrayByAddingObjectsFromArray:locationsLeftToAdd].mutableCopy;
+
+    int c = [newRoutes.routes flatten:@"locations"].distinct.count;
+    if( c != 8){
+
+    }
+
+    return newRoutes;
 }
 
 + (void)mutate:(TSPMultipleRoute*)individual{
@@ -78,7 +138,7 @@
                     NSObject <TSPPointContract> *city1 = route.locations[tourPos1];
                     [route2.locations addObject:city1];
                     [route.locations removeObject:city1];
-                    return;
+                    continue;
                 }
 
                 int tourPos2 = arc4random_uniform(route2.locations.count);
@@ -92,6 +152,11 @@
                 route.locations[tourPos1] = city2;
             }
         }
+    }
+
+    int c = [individual.routes flatten:@"locations"].distinct.count;
+    if( c != 8){
+
     }
 }
 @end

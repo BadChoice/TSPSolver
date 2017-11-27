@@ -23,7 +23,7 @@
     [super viewDidLoad];
     self.mapview.delegate = self;
     MKPointAnnotation* pin = [self drawAddress:self.startPoint];
-    [self.mapview setRegion:MKCoordinateRegionMake(pin.coordinate, MKCoordinateSpanMake(0.01, 0.01))];
+    [self.mapview setRegion:MKCoordinateRegionMake(pin.coordinate, MKCoordinateSpanMake(0.008, 0.008))];
     
     [self.sampleData each:^(TSPAddress* address) {
         [self drawAddress:address];
@@ -56,17 +56,21 @@
 
 
 - (IBAction)solve1:(id)sender {
+    [self clearOverrides];
     TSPRoute* route = [TSPSolver solve:self.sampleData startingAt:self.startPoint];
     [self drawRoute:route];
 }
 
 - (IBAction)solve3:(id)sender {
+    [self clearOverrides];
     TSPMultipleRoute* multipleRoute = [TSPMultipleSolver solve:3 locations:self.sampleData startingAt:self.startPoint];
     [multipleRoute.routes each:^(TSPRoute* route) {
         [self drawRoute:route];
     }];
-    
-    
+}
+
+-(void)clearOverrides{
+    [self.mapview removeOverlays:self.mapview.overlays];
 }
 
 -(void)drawRoute:(TSPRoute*)route{
@@ -90,33 +94,17 @@
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
 {
+    NSArray* colors = @[UIColor.redColor, UIColor.greenColor, UIColor.orangeColor, UIColor.blueColor, UIColor.grayColor, UIColor.brownColor, /*UIColor.yellowColor, *//*UIColor.cyanColor,*/ UIColor.blackColor];
     
-    NSArray* colors = @[
-       [[UIColor redColor] colorWithAlphaComponent:0.7],
-       [[UIColor greenColor] colorWithAlphaComponent:0.7],
-       [[UIColor orangeColor] colorWithAlphaComponent:0.7],
-       [[UIColor blueColor] colorWithAlphaComponent:0.7],
-       [[UIColor grayColor] colorWithAlphaComponent:0.7],
-       [[UIColor brownColor] colorWithAlphaComponent:0.7],
-       [[UIColor yellowColor] colorWithAlphaComponent:0.7],
-       [[UIColor cyanColor] colorWithAlphaComponent:0.7],
-       [[UIColor blackColor] colorWithAlphaComponent:0.7],
-       [[UIColor whiteColor] colorWithAlphaComponent:0.7],
-    ];
-    
-    if ([overlay isKindOfClass:MKPolyline.class])
-    {
-        
+    if ([overlay isKindOfClass:MKPolyline.class]) {
         UIColor * color = colors.random;
         MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
         
         renderer.fillColor   = color;
         renderer.strokeColor = color;
         renderer.lineWidth   = 3;
-        
         return renderer;
     }
-    
     return nil;
 }
 

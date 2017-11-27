@@ -13,6 +13,7 @@
 }
 
 + (TSPRoute *)solve:(NSArray<TSPPointContract>*)locations startingAt:(NSObject<TSPPointContract> *)start {
+    if(locations.count == 0) return [TSPRoute make:start locations:@[]];
     if(locations.count < 10){
         return [self solve:locations startingAt:start with:[TSPExactAlgorithm new]];
     }
