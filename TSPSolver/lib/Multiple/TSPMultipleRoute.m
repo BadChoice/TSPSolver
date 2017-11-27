@@ -30,11 +30,7 @@
 
 - (void)optimize{
     self.routes = [self.routes map:^id(TSPRoute* route, NSUInteger idx) {
-        TSPRoute* best = [TSPSolver solve:route.locations startingAt:route.start];
-        if(!best){
-
-        }
-        return best ? best : route;
+        return [TSPSolver solve:route.locations startingAt:route.start with:[TSPNearestAlgorithm new]];
     }].mutableCopy;
 }
 

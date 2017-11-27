@@ -2,30 +2,55 @@
 #import "GAPopulation.h"
 #import "RVCollection.h"
 
-#define ELITISM true
-#define POPULATION_SIZE 50
-#define TOURNAMENT_SIZE 5
-#define MUTATION_RATE 0.015
-#define EVOLUTIONS 100
-
 @implementation TSPGeneticAlgorithm
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.populationSize = 50;
+        self.evolutionsLimit = 2000;
+        self.elitism = true;
+        self.tournamentSize = 5;
+        self.mutationRate = 0.015;
+        self.evolutionImprovementThreshold = 100;
+    }
+
+    return self;
+}
 
 /*
  * Based on: http://www.theprojectspot.com/tutorial-post/applying-a-genetic-algorithm-to-the-travelling-salesman-problem/5
  */
 - (TSPRoute *)solve:(NSArray<TSPPointContract>*)locations startingAt:(NSObject <TSPPointContract> *)start {
-    GAPopulation *population = [GAPopulation make:POPULATION_SIZE locations:locations start:start];
-    for (int i = 0; i < EVOLUTIONS; i++) {
+    //self.populationSize = 100;
+    //self.mutationRate = 0.015;
+    self.evolutionImprovementThreshold = 100;
+    GAPopulation *population = [GAPopulation make:self.populationSize locations:locations start:start];
+    double lastBestValue     = -1;
+    int notChangedEvolutions = 0;
+    for (int i = 0; i < self.evolutionsLimit; i++) {
         population = [self evolve:population];
+        double bestDistance = population.best.distance;
+        if(bestDistance < lastBestValue || lastBestValue == -1){
+            notChangedEvolutions = 0;
+            lastBestValue = bestDistance;
+        }
+        else{
+            notChangedEvolutions++;
+        }
+        if(notChangedEvolutions == self.evolutionImprovementThreshold){
+            NSLog(@"Evolutions: %d, Distance %.2f Km", i, lastBestValue/1000);
+            return population.best;
+        }
     }
     return population.best;
 }
 
 -(GAPopulation *)evolve:(GAPopulation *)population{
-    GAPopulation * newPopulation = [GAPopulation make:POPULATION_SIZE];
+    GAPopulation * newPopulation = [GAPopulation make:self.populationSize];
     // Keep our best individual if elitism is enabled
     int elitismOffset = 0;
-    if (ELITISM) {
+    if (self.elitism) {
         newPopulation.individuals[elitismOffset] = population.best;
         elitismOffset = 1;
     }
@@ -33,19 +58,17 @@
     // Crossover population
     // Loop over the new population's size and create individuals from
     // Current population
-    for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
+    for (int i = elitismOffset; i < self.populationSize; i++) {
         // Select parents
         TSPRoute * parent1 = [self tournamentSelection:population];
         TSPRoute * parent2 = [self tournamentSelection:population];
         // Crossover parents
         TSPRoute *child = [self crossover:parent1 parent2:parent2];
+        // Mutate the new population a bit to add some new genetic material
+        [self mutate:child];
+
         // Add child to new population
         newPopulation.individuals[i] = child;
-    }
-
-    // Mutate the new population a bit to add some new genetic material
-    for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
-        [self mutate:newPopulation.individuals[i]];
     }
 
     return newPopulation;
@@ -54,11 +77,11 @@
 // Selects candidate tour for crossover
 - (TSPRoute *)tournamentSelection:(GAPopulation *)population {
     // Create a tournament population
-    GAPopulation *tournament = [GAPopulation make:TOURNAMENT_SIZE];
+    GAPopulation *tournament = [GAPopulation make:self.tournamentSize];
     // For each place in the tournament get a random candidate tour and
     // add it
-    for (int i = 0; i < TOURNAMENT_SIZE; i++) {
-        int randomId = arc4random_uniform(POPULATION_SIZE);
+    for (int i = 0; i < self.tournamentSize; i++) {
+        int randomId = arc4random_uniform(self.populationSize);
         tournament.individuals[i]  = population.individuals[randomId];
     }
     // Get the fittest tour
@@ -111,7 +134,7 @@
 - (void)mutate:(TSPRoute *)route {
     for(int tourPos1=0; tourPos1 < route.locations.count; tourPos1++){
         // Apply mutation rate
-        if(((float)arc4random() / UINT32_MAX) < MUTATION_RATE){
+        if(((float)arc4random() / UINT32_MAX) < self.mutationRate){
             // Get a second random position in the tour
             int tourPos2 = arc4random_uniform(route.locations.count);
 

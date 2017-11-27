@@ -2,8 +2,11 @@
 #import <Collection/RVCollection.h>
 #import "TSPMultipleSolver.h"
 #import "GAMultiplePopulation.h"
+#import "TSPSolver.h"
+#import "TSPGeneticAlgorithm.h"
+#import "TSPNearestAlgorithm.h"
 
-#define POPULATION_SIZE 50
+#define POPULATION_SIZE 100
 #define EVOLUTIONS 100
 #define ELITISM true
 #define TOURNAMENT_SIZE 5
@@ -15,7 +18,13 @@
     for (int i = 0; i < EVOLUTIONS; i++) {
         population = [self.class evolve:population];
     }
-    return population.best;
+    TSPMultipleRoute *best = population.best;
+    best.routes = [best.routes map:^id(TSPRoute *route, NSUInteger idx) {
+        TSPRoute* route1 = [TSPSolver solve:route.locations startingAt:route.start with:[TSPNearestAlgorithm new]];
+        TSPRoute* route2 = [TSPSolver solve:route.locations startingAt:route.start with:[TSPGeneticAlgorithm new]];
+        return route1.distance < route2.distance ? route1 : route2;
+    }].mutableCopy;
+    return best;
 }
 
 + (GAMultiplePopulation*)evolve:(GAMultiplePopulation*)population{
@@ -37,14 +46,13 @@
         TSPMultipleRoute * parent2 = [self tournamentSelection:population];
         // Crossover parents
         TSPMultipleRoute *child = [self crossover:parent1 parent2:parent2];
+
+        // Mutate the new population a bit to add some new genetic material
+        [self mutate:child];
+        [child optimize];
+
         // Add child to new population
         newPopulation.individuals[i] = child;
-    }
-
-    // Mutate the new population a bit to add some new genetic material
-    for (int i = elitismOffset; i < POPULATION_SIZE; i++) {
-        [self mutate:newPopulation.individuals[i]];
-        [newPopulation.individuals[i] optimize];
     }
 
     return newPopulation;
@@ -59,10 +67,6 @@
         int randomId = arc4random_uniform(POPULATION_SIZE);
         TSPMultipleRoute * selected = population.individuals[randomId];
         tournament.individuals[i]  = selected;
-        int c = [selected.routes flatten:@"locations"].distinct.count;
-        if( c != 8){
-
-        }
     }
     // Get the fittest tour
     TSPMultipleRoute *best = tournament.best;
@@ -121,11 +125,6 @@
                 route.locations[tourPos1] = city2;
             }
         }
-    }
-
-    int c = [individual.routes flatten:@"locations"].distinct.count;
-    if( c != 8){
-
     }
 }
 @end

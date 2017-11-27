@@ -2,6 +2,7 @@
 #import "TSPSolverContract.h"
 #import "TSPExactAlgorithm.h"
 #import "TSPNearestAlgorithm.h"
+#import "TSPGeneticAlgorithm.h"
 
 @implementation TSPSolver
 
@@ -13,9 +14,14 @@
 }
 
 + (TSPRoute *)solve:(NSArray<TSPPointContract>*)locations startingAt:(NSObject<TSPPointContract> *)start {
-    if(locations.count == 0) return [TSPRoute make:start locations:@[]];
-    if(locations.count < 10){
+    if(locations.count == 0) {
+        return [TSPRoute make:start locations:@[]];
+    }
+    if(locations.count < 7){
         return [self solve:locations startingAt:start with:[TSPExactAlgorithm new]];
+    }
+    if(locations.count < 50){
+        return [self solve:locations startingAt:start with:[TSPGeneticAlgorithm new]];
     }
     return [self solve:locations startingAt:start with:[TSPNearestAlgorithm new]];
 }
